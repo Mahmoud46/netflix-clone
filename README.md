@@ -104,6 +104,7 @@ src/
 │   ├── Firebase.tsx    # Holds firebase options
 │   └── LandingCardsData.ts # Holds all Landing page data
 ├── interfaces
+│   ├── CountryCode.ts
 │   ├── MovieApiResponse.ts
 │   └── VideoApiResponse.ts
 ├── pages/

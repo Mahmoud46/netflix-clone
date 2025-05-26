@@ -1,5 +1,5 @@
 import { API_GET_METHOD_OPTIONS } from "../../constants/API";
-import type { CountryCode } from "../../interfaces/CountryCode180";
+import type { CountryCode } from "../../interfaces/CountryCode";
 
 export async function FetchMovies(catergory: string) {
 	const regionCode: CountryCode = "US";
