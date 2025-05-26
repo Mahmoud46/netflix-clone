@@ -1,0 +1,63 @@
+@use "../../styles/mixins/flex" as flex;
+.more-reasons-to-join {
+	padding: 20px 11%;
+	@media (max-width: 960px) {
+		padding: 20px 4%;
+	}
+	@media (max-width: 1024px) {
+		padding: 20px 6%;
+	}
+	h2 {
+		margin-bottom: 10px;
+	}
+	.cards-container {
+		@include flex.flex($align-items: start, $justify-content: space-between);
+		gap: 16px;
+		flex-wrap: wrap;
+		.card {
+			padding: 24px 16px;
+			border-radius: 20px;
+			height: 334px;
+			width: calc(25% - 12px);
+
+			@include flex.flex(
+				$justify-content: space-between,
+				$align-items: start,
+				$flex-direction: column
+			);
+			background: linear-gradient(-45deg, #210e17 10%, #192145 100%);
+
+			@media (max-width: 1115px) {
+				width: calc(50% - 8px);
+				height: 217px;
+			}
+
+			@media (max-width: 960px) {
+				width: 100%;
+				height: max-content;
+			}
+
+			h2 {
+				font-size: 24px;
+				line-height: 26px;
+				margin-bottom: 20px;
+				@media (max-width: 960px) {
+					font-size: 20px;
+				}
+			}
+			p {
+				font-size: 16px;
+				line-height: 18px;
+				color: #b3b3b3;
+			}
+			img {
+				margin-top: 20px;
+				align-self: flex-end;
+
+				@media (max-width: 1115px) {
+					margin-top: 0px;
+				}
+			}
+		}
+	}
+}

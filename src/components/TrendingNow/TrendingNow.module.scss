@@ -1,0 +1,61 @@
+@use "../../styles/mixins/flex" as flex;
+.trending-now {
+	padding: 20px 11%;
+	@media (max-width: 960px) {
+		padding: 20px 4%;
+	}
+
+	@media (max-width: 1024px) {
+		padding: 20px 6%;
+	}
+
+	h2 {
+		margin-bottom: 10px;
+	}
+	.container {
+		@include flex.flex($justify-content: start);
+		padding: 10px;
+		max-width: 100%;
+		overflow-x: auto;
+		overflow-y: hidden;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+	.poster {
+		position: relative;
+		padding: 10px 20px;
+		cursor: pointer;
+		transition: 0.5s ease-in-out all;
+
+		.poster-container {
+			height: 252px;
+			width: 180px;
+			border-radius: 10px;
+			background-size: cover;
+			background-position: center;
+			@media (max-width: 1115px) {
+				height: 196px;
+				width: 140px;
+			}
+		}
+
+		span {
+			position: absolute;
+			font-size: 120px;
+			font-weight: 800;
+			bottom: 10px;
+			left: 0;
+			color: black;
+			line-height: 120px;
+			-webkit-text-stroke: 2px #414141;
+			@media (max-width: 1115px) {
+				font-size: 100px;
+			}
+		}
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}

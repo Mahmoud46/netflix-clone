@@ -1,0 +1,27 @@
+@use "../../styles/mixins/flex" as flex;
+.player {
+	height: 100vh;
+	@include flex.flex($flex-direction: column);
+	padding: 20px 0;
+	img {
+		align-self: flex-start;
+		margin-left: 20px;
+		width: 50px;
+		cursor: pointer;
+
+		&.spinner {
+			align-self: center;
+			width: 100px;
+		}
+	}
+
+	.player-info {
+		width: 100%;
+		@include flex.flex($justify-content: space-between);
+		padding: 0 4%;
+	}
+
+	iframe {
+		border-radius: 20px;
+	}
+}

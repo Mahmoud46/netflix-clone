@@ -1,0 +1,172 @@
+@use "../../styles/mixins/flex" as flex;
+header {
+	width: 100%;
+	top: 0;
+	padding: 20px 6%;
+	position: fixed;
+	@include flex.flex($justify-content: space-between);
+	font-size: 14px;
+	color: #e5e5e5;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 10%, transparent);
+	z-index: 1;
+	&.dark {
+		backdrop-filter: blur(15px);
+	}
+
+	.left {
+		@include flex.flex($justify-content: start);
+		gap: 50px;
+		img {
+			width: 90px;
+		}
+		ul {
+			@include flex.flex($justify-content: start);
+			list-style: none;
+			gap: 20px;
+			li {
+				cursor: pointer;
+				&:first-child {
+					color: #e50914;
+					font-weight: 700;
+				}
+			}
+		}
+	}
+	.right {
+		@include flex.flex($justify-content: start);
+		gap: 20px;
+		.icons {
+			width: 20px;
+			cursor: pointer;
+		}
+		.profile {
+			position: relative;
+			@include flex.flex($justify-content: start);
+			cursor: pointer;
+			gap: 10px;
+			.profile-img {
+				border-radius: 4px;
+				width: 35px;
+			}
+			.dropdown {
+				position: absolute;
+				top: 100%;
+				right: 0;
+				width: max-content;
+				background: #191919;
+				border-radius: 2px;
+				padding: 18px 22px;
+				z-index: 1;
+				display: none;
+
+				p {
+					font-size: 13px;
+					cursor: pointer;
+					text-decoration: none;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+			&:hover {
+				.dropdown {
+					display: block;
+				}
+			}
+		}
+	}
+
+	&.landing-navbar {
+		@include flex.flex($justify-content: space-between);
+		padding: 40px 11%;
+		flex-wrap: wrap;
+		@media (max-width: 960px) {
+			padding: 20px 4%;
+		}
+		@media (max-width: 1024px) {
+			padding: 20px 6%;
+		}
+		.logo {
+			height: 40px;
+			@media (max-width: 960px) {
+				height: 24px;
+			}
+		}
+
+		.lang-signin {
+			@include flex.flex;
+			gap: 16px;
+			.lang-input {
+				background: rgba($color: #191919, $alpha: 0.7);
+				@include flex.flex;
+				gap: 5px;
+				position: relative;
+				padding: 6px 10px;
+				cursor: pointer;
+				border: 1px solid #5e5e5f;
+				border-radius: 4px;
+				height: 32px;
+				width: 124px;
+				@media (max-width: 600px) {
+					width: 62px;
+				}
+				select {
+					font-size: 16px;
+					background: none;
+					padding: 0;
+					border: none;
+					appearance: none; /* For most modern browsers */
+					-webkit-appearance: none; /* For Safari/Chrome */
+					-moz-appearance: none;
+					cursor: pointer;
+					outline: none;
+					@media (max-width: 600px) {
+						display: none;
+					}
+				}
+				img {
+					height: 16px;
+					width: 16px;
+				}
+			}
+			button {
+				padding: 6px 16px;
+				height: 32px;
+				background: #e50914;
+				border: none;
+				font-weight: 500;
+				font-size: 14px;
+				border-radius: 4px;
+				cursor: pointer;
+				&:hover {
+					background: #b1070f;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	header {
+		padding: 20px 4%;
+		.left {
+			ul {
+				display: none;
+			}
+		}
+		img {
+			height: 25px;
+		}
+	}
+}
+@media (max-width: 500px) {
+	header {
+		padding: 20px 4%;
+		.right {
+			gap: 10px;
+		}
+		img {
+			height: 20px;
+		}
+	}
+}

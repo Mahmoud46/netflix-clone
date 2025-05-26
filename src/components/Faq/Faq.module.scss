@@ -1,0 +1,53 @@
+@use "../../styles/mixins/flex" as flex;
+.faq {
+	padding: 20px 11%;
+	@media (max-width: 960px) {
+		padding: 20px 4%;
+	}
+	@media (max-width: 1024px) {
+		padding: 20px 6%;
+	}
+
+	h2 {
+		margin-bottom: 10px;
+	}
+	.faq-card {
+		margin-bottom: 8px;
+		p {
+			font-size: 24px;
+			padding: 24px;
+			text-align: start;
+			&.info {
+				background: #2d2d2d;
+				margin-top: 2px;
+			}
+
+			@media (max-width: 960px) {
+				font-size: 18px;
+			}
+		}
+
+		img {
+			&.rotate {
+				transform: rotate(225deg);
+			}
+			@media (max-width: 960px) {
+				width: 24px;
+			}
+		}
+		button {
+			width: 100%;
+			@include flex.flex($justify-content: space-between);
+			cursor: pointer;
+			background: none;
+			outline: none;
+			border: none;
+			padding-right: 24px;
+			background: #2d2d2d;
+			transition: 0.5s ease-in-out all;
+			&:hover {
+				background: #494949;
+			}
+		}
+	}
+}
