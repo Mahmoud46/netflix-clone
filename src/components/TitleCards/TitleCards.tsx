@@ -37,6 +37,7 @@ export default function TitleCards({
 			<div className={styles["cards-list"]} onWheelCapture={handleWheel}>
 				{error && <p>Whoops, something went wrong ...</p>}
 				{isLoading && <img src={loadingAnimation} className={styles.spinner} />}
+				{data?.results?.length == 0 && <p>No {category} movies </p>}
 				{data &&
 					data?.results?.map((movie: MovieResult, index: number) => (
 						<Link to={`/trailer/${movie.id}`}>
