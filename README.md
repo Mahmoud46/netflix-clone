@@ -27,6 +27,12 @@ A modern, responsive Netflix-inspired streaming app built with **React.js**, **T
 
 ---
 
+## 📸 Preview
+
+<img src="src\assets\netflix_clone.gif">
+
+---
+
 ## 🔑 TMDB API Setup
 
 1. Create a free account on [TMDB](https://www.themoviedb.org/)
