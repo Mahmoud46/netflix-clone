@@ -57,7 +57,6 @@ export const login = async (email: string, password: string) => {
 	try {
 		await signInWithEmailAndPassword(auth, email, password);
 	} catch (error) {
-		console.error(error);
 		toast.error(error?.code?.split("/")[1]?.split("-")?.join(" "));
 	}
 };
